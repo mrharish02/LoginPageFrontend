@@ -11,7 +11,7 @@ const Home = () => {
 
   async function logout() {
     try {
-      const response = await fetch('http://localhost:3001/logout', {
+      const response = await fetch('https://loginpagebackend-sz4j.onrender.com/logout', {
         method: 'POST',
         credentials: 'include', // Include credentials to send cookies along with the request
       });
@@ -29,7 +29,7 @@ const Home = () => {
 
   async function fetchTodos() {
     try {
-      const response = await fetch('http://localhost:3001/todos', {
+      const response = await fetch('https://loginpagebackend-sz4j.onrender.com/todos', {
         method: 'GET',
         credentials: 'include',
       });
@@ -65,7 +65,7 @@ const Home = () => {
     }
     
     try {
-      const response = await fetch('http://localhost:3001/home', {
+      const response = await fetch('https://loginpagebackend-sz4j.onrender.com/home', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ const Home = () => {
 
   async function deleteTodo(title) {
     try {
-      const response = await fetch(`http://localhost:3001/todos/${title}`, {
+      const response = await fetch(`https://loginpagebackend-sz4j.onrender.com/${title}`, {
         method: 'DELETE',
         credentials: 'include',
       });
