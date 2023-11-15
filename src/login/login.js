@@ -44,6 +44,7 @@ const Login = () => {
 
       if (data.status === 'success') {
         // window.location.hre = '/home'
+        document.cookie = `jwt=${jsonResponse.jwt}; expires=${1hr}; path=/`;
         navigate('/home')
       }
       else if(data.status ==='invalid'){
