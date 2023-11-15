@@ -44,7 +44,11 @@ const Login = () => {
 
       if (data.status === 'success') {
         // window.location.hre = '/home'
-        document.cookie = `jwt=${jsonResponse.jwt}; expires=${1hr}; path=/`;
+        const expirationDate = new Date();
+        expirationDate.setTime(expirationDate.getTime() + 60 * 60 * 1000); // 1 hour in milliseconds
+  
+        // Set the cookie with the JWT and expiration time
+        document.cookie = `jwt=${data.jwt}; expires=${expirationDate.toUTCString()}; path=/`;
         navigate('/home')
       }
       else if(data.status ==='invalid'){
